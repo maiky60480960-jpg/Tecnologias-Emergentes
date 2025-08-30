@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Práctica_N°2 Etiquetas HTML que no estaban en clases</h1>
+  <!-- 1 -->
+  <h2>1. &lt;article&gt;</h2>
+  <article>
+    <h3>Noticia independiente</h3>
+    <p>Este artículo contiene un contenido propio y autónomo.</p>
+  </article>
+  <hr>
+  <!-- 2 -->
+  <h2>2. &lt;section&gt;</h2>
+  <section>
+    <h3>Sección temática</h3>
+    <p>Sirve para dividir la página en bloques organizados por tema.</p>
+  </section>
+  <hr>
+  <!-- 3 -->
+  <h2>3. &lt;aside&gt;</h2>
+  <aside>
+    <p>Contenido lateral, como publicidad o enlaces relacionados.</p>
+  </aside>
+  <hr>
+  <!-- 4 -->
+  <h2>4. &lt;footer&gt;</h2>
+  <footer>
+    <p>© 2025 - Todos los derechos reservados</p>
+  </footer>
+  <hr>
+  <!-- 5 -->
+  <h2>5. &lt;mark&gt;</h2>
+  <p>Este texto tiene una <mark>palabra resaltada</mark>.</p>
+  <hr>
+  <!-- 6 -->
+  <h2>6. &lt;abbr&gt;</h2>
+  <p><abbr title="Cascading Style Sheets">CSS</abbr> se usa para dar estilo a las páginas web.</p>
+  <hr>
+  <!-- 7 -->
+  <h2>7. &lt;address&gt;</h2>
+  <address>
+    Escrito por Juan Pérez.<br>
+    Correo: juan@example.com
+  </address>
+  <p>esto es información de contacto <br>
+     nunca se debe usar "address" para otros textos que no sean información de contacto
+  </p>
+  <hr>
+  <!-- 8 -->
+  <h2>8. &lt;audio&gt;</h2>
+  <audio controls>
+    <source src="Mundo Extraño Animacion 3D.mp4" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta audio.
+  </audio>
+    <p>Sirve para reproducir archivos de audio en la página web,</p>
+  <hr>
+  <!-- 9 -->
+  <h2>9. &lt;video&gt;</h2>
+  <video controls width="640" height="360">
+    <source src="Mundo Extraño Animacion 3D.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta video.
+  </video>
+    <p>Sirve para reproducir archivos de video en la página web,</p>
+  <hr>
+  <!-- 10 -->
+  <h2>10. &lt;canvas&gt;</h2>
+  <canvas id="miCanvas" width="200" height="100" style="border:1px solid black;">
+    Tu navegador no soporta canvas.
+  </canvas>
+  <script>
+    const c = document.getElementById("miCanvas");
+    const ctx = c.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 150, 50);
+  </script>
+  <hr>
+  <!-- 11 -->
+  <h2>11. &lt;details&gt;</h2>
+  <details>
+    <summary>Haz clic para expandir</summary>
+    <p>Este es el contenido oculto dentro de la etiqueta &lt;details&gt;.</p>
+  </details>
+  <hr>
+  <!-- 12 -->
+  <h2>12. &lt;summary&gt;</h2>
+  <details>
+    <summary>Resumen visible</summary>
+    <p>El texto dentro del summary es lo que se ve como título.</p>
+  </details>
+  <hr>
+  <!-- 13 -->
+  <h2>13. &lt;meter&gt;</h2>
+  <p>Nivel de batería: <meter value="0.7" min="0" max="1">70%</meter></p>
+  <hr>
+  <!-- 14 -->
+  <h2>14. &lt;output&gt;</h2>
+  <form oninput="resultado.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="number" id="a" value="5"> +
+    <input type="number" id="b" value="3"> =
+    <output name="resultado">8</output>
+  </form>
+  <hr>
+    <h2>15. &lt;picture&gt;</h2>
+  <picture>
+    <!-- 15 -->
+    <source srcset="gatito1.png" media="(min-width: 800px)">
+    <source srcset="gatito1.png" media="(min-width: 500px)">
+    <img src="gatito1.png" alt="Imagen adaptable">
+  </picture>
+  <p>La etiqueta picture permite mostrar imágenes diferentes según el tamaño de la pantalla.</p>
+
+</body>
+</html>
