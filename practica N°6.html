@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías Emergentes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            padding-top: 60px; 
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4b2121;
+            color: white;
+        }
+        td:first-child {
+            background-color: rgba(147, 74, 119, 0.58);
+            font-weight: bold;
+        }
+        .libre {
+            background-color: #f5e1f4;
+            font-weight: bold;
+        }
+        .SIS-415 { background-color: #fa4c4c; }
+        .SIS-443 { background-color: rgba(219, 167, 104, 0.94); }
+        .SIS-421 { background-color: #740e58; color: white; }
+        .SIS-414 { background-color: #2a88e8; }
+        .SIS-416 { background-color: rgba(48, 227, 76, 0.7); }
+        .SIS-420 { background-color: #f5fc56; }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 0;
+        }
+        nav ul {  
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            padding: 0;
+            background-color: rgba(18, 90, 12, 0.82);
+            margin: 0;
+            padding: 5px 0;
+        }
+        button {
+            background-color: #4a4a4a; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        form {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+        input, datalist {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #4a4a4a;
+            color: white;
+            text-align: center;
+        }
+        .personal-data, .Inicios, .horario, .tema, .extra-dato, .formula {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px; /* AÑADIDO: para separar las secciones */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        .tiempox {
+            background-color: #75b3af;
+            font-weight: bold;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#datos-personales">Datos Personales</a></li>
+            <li><a href="#horarios">Horarios</a></li>
+            <li><a href="#formularios">Formularios</a></li>
+            <li><a href="#temas">Temas</a></li>
+            <li><a href="#datos-extras">Datos Extras</a></li>
+        </ul>
+    </nav>
+    
+    <section id="inicio" class="Inicios">
+        <h1>TECNOLOGIAS EMERGENTES 02/2025</h1>
+    </section>
+    
+    <section id="datos-personales" class="personal-data">
+        <h2>Datos Personales</h2>    
+        <ul>
+            <li><h3>NOMBRE: <ins>Miguel Angel</ins></h3></li>
+            <li><h3>APELLIDOS: <del>Apaza Sanjinez</del></h3></li>
+            <li><h3>SEMESTRE: <del>4° Semestre</del></h3></li>
+            <li><h3>CORREO ELECTRONICO: <del>maiky60480960@gmail.com</del></h3></li>
+            <li><h3>SEXO: <del>Hombre</del></h3></li>
+            <li><h3>NACIONALIDAD: <del>BOLIVIA</del></h3></li>
+            <li><h3>CI: <del>12718097 Pt.</del></h3></li>
+            <li><h3>CUMPLEAÑOS: <del>14 DE AGOSTO</del></h3></li>
+            <li><h3>ESTADO CIVIL: <del>SOLTERO</del></h3></li>
+        </ul>
+    </section>
+    
+    <section id="horarios" class="horario">
+        <h2>Horarios</h2>
+        <table>
+            <tr>
+                <th>Horario</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+            </tr>
+            <tr>
+                <td>07:45-08:30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="SIS-415" rowspan="3">SIS-415</td>
+                <td class="libre" rowspan="15">LIBRE</td>
+                <td class="tiempox" rowspan="16" colspan="2">Paso tiempo con Victoria "Mi Hija"</td>
+            </tr>
+            <tr>
+                <td>08:30-09:15</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>09:15-10:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:00-10:45</td>
+                <td></td>
+                <td class="SIS-443" rowspan="3">SIS-443</td>
+                <td class="SIS-421" rowspan="3">SIS-421</td>
+                <td class="SIS-414" rowspan="2">SIS-414</td>
+            </tr>
+            <tr>
+                <td>10:45-11:30</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11:30-12:15</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:00-14:45</td>
+                <td></td>
+                <td></td>
+                <td class="SIS-416" rowspan="3">SIS-416</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:45-15:30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15:30-16:15</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16:15-17:00</td>
+                <td class="SIS-415" rowspan="3">SIS-415</td>
+                <td class="SIS-414" rowspan="3">SIS-414</td>
+                <td class="SIS-414" rowspan="3">SIS-414</td>
+                <td class="SIS-443" rowspan="3">SIS-443</td>
+            </tr>
+            <tr>
+                <td>17:00-17:45</td>
+            </tr>
+            <tr>
+                <td>17:45-18:30</td>
+            </tr>
+            <tr>
+                <td>18:30-19:15</td>
+                <td class="SIS-420" rowspan="3">SIS-420</td>
+                <td class="SIS-416" rowspan="3">SIS-416</td>
+                <td class="SIS-420" rowspan="3">SIS-420</td>
+                <td class="SIS-421" rowspan="3">SIS-421</td>
+            </tr>
+            <tr>
+                <td>19:15-20:00</td>
+            </tr>
+            <tr>
+                <td>20:00-20:45</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="formularios" class="formula">
+        <h2>Formularios</h2>
+        <form action="procesar.php" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label>Nombre: 
+                    <input type="text" name="nombre" placeholder="Miguel Angel" required>
+                </label>
+                <label>Apellidos: 
+                    <input type="text" name="apellido" placeholder="Apaza Sanjinez" required>
+                </label>
+                <label>Ciudad:
+                    <input list="ciudades" id="ciudad" name="ciudad" placeholder="Escribe o selecciona">
+                </label>
+                <datalist id="ciudades">
+                    <option value="La Paz"></option>
+                    <option value="Cochabamba"></option>
+                    <option value="Chuquisaca"></option>
+                    <option value="Santa Cruz"></option>
+                    <option value="Potosí"></option>
+                    <option value="Tarija"></option>
+                    <option value="Oruro"></option>
+                    <option value="Pando"></option>
+                    <option value="Beni"></option>
+                </datalist>
+                <label>Fecha:
+                    <input type="date" name="fecha">
+                </label>
+                <label>Hora:
+                    <input type="time" name="hora">
+                </label>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit">Enviar Formulario</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    
+    <section id="temas" class="tema">
+    <h2>Temas</h2>
+    
+    <div style="background: #e3f2fd; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #1976d2; margin-top: 0;">HTML</h3>
+        
+        <h4>¿Qué es HTML?</h4>
+        <p>Es el lenguaje para crear páginas web. Es como los bloques para construir.</p>
+        
+        <h4>Partes principales:</h4>
+        <div style="display: flex; gap: 10px; margin: 10px 0;">
+            <div style="flex: 1; background: white; padding: 10px; border-radius: 5px;">
+                <strong>Etiquetas</strong>
+                <div style="margin-top: 5px;">
+                    <code>&lt;h1&gt;</code><br>
+                    <code>&lt;p&gt;</code>
+                </div>
+            </div>
+            <div style="flex: 1; background: white; padding: 10px; border-radius: 5px;">
+                <strong>Atributos</strong>
+                <div style="margin-top: 5px;">
+                    <code>class</code><br>
+                    <code>id</code>
+                </div>
+            </div>
+        </div>
+        
+        <h4>Para qué sirve:</h4>
+        <ul>
+            <li>Crear páginas web</li>
+            <li>Hacer formularios</li>
+            <li>Crear tablas</li>
+            <li>Organizar contenido</li>
+        </ul>
+    </div>
+
+    <div style="background: #fff3e0; padding: 20px; border-radius: 10px;">
+        <h3 style="color: #f57c00; margin-top: 0;">CSS</h3>
+        
+        <h4>¿Qué es CSS?</h4>
+        <p>Es lo que hace que las páginas se vean bonitas. Le da estilo al HTML.</p>
+        
+        <h4>Cómo funciona:</h4>
+        <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
+            <code>h1 { color: blue; }</code>
+        </div>
+        
+        <h4>Cosas que puedo cambiar:</h4>
+        <div style="display: flex; gap: 8px; margin: 10px 0;">
+            <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                <code>color</code>
+            </div>
+            <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                <code>font-size</code>
+            </div>
+            <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                <code>margin</code>
+            </div>
+        </div>
+        
+        <h4>Para qué sirve:</h4>
+        <ul>
+            <li>Cambiar colores</li>
+            <li>Mover elementos</li>
+            <li>Hacer responsive</li>
+            <li>Agregar animaciones</li>
+        </ul>
+    </div>
+    </section>
+    <section id="datos-extras" class="extra-dato">
+        <h2>Datos Extras</h2>
+        <p>“Se puede añadir cualquier información que se considere necesaria”</p>
+    </section>
+    
+    <footer>
+        Ingenieria de Sistema sede Tupiza <br>
+        TODOS LOS DERECHOS RESERVADOS @2025
+    </footer>
+</body>
+</html>
