@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías Emergentes</title>
+    <style>
+        :root {
+            --primary-color: #4b2121;
+            --secondary-color: #2c3e50;
+            --accent-color: rgba(18, 90, 12, 0.82);
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --text-dark: #333;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            padding-top: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body.oscuro {
+            background-color: #222;
+            color: #f5f5f5;
+        }
+        
+        h1, h2, h3 {
+            color: var(--text-dark);
+        }
+        
+        body.oscuro h1, 
+        body.oscuro h2, 
+        body.oscuro h3 {
+            color: #f5f5f5;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: var(--white);
+        }
+        
+        body.oscuro table {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        td:first-child {
+            background-color: rgba(147, 74, 119, 0.58);
+            font-weight: bold;
+        }
+        
+        .libre {
+            background-color: #f5e1f4;
+            font-weight: bold;
+        }
+        
+        .SIS-415 { background-color: #fa4c4c; }
+        .SIS-443 { background-color: rgba(219, 167, 104, 0.94); }
+        .SIS-421 { background-color: #740e58; color: white; }
+        .SIS-414 { background-color: #2a88e8; }
+        .SIS-416 { background-color: rgba(48, 227, 76, 0.7); }
+        .SIS-420 { background-color: #f5fc56; }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 0;
+        }
+        
+        nav ul {  
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            padding: 0;
+            background-color: var(--accent-color);
+            margin: 0;
+            padding: 5px 0;
+        }
+        
+        button {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #333;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        form {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        body.oscuro form {
+            background-color: #333;
+        }
+        
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        input, datalist {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #4a4a4a;
+            color: white;
+            text-align: center;
+        }
+        
+        .personal-data, .Inicios, .horario, .tema, .extra-dato, .formula, .javascript-section {
+            background-color: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        body.oscuro .personal-data, 
+        body.oscuro .Inicios, 
+        body.oscuro .horario, 
+        body.oscuro .tema, 
+        body.oscuro .extra-dato, 
+        body.oscuro .formula,
+        body.oscuro .javascript-section {
+            background-color: #333;
+        }
+        
+        .tiempox {
+            background-color: #75b3af;
+            font-weight: bold;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .javascript-section {
+            background-color: #f0f8ff;
+        }
+        
+        body.oscuro .javascript-section {
+            background-color: #2a2a4a;
+        }
+        
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        
+        body.oscuro .code-block {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+        }
+        
+        .demo-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        body.oscuro .demo-container {
+            background-color: #2a2a2a;
+            border-color: #444;
+        }
+        
+        #cuadro {
+            width: 100px; 
+            height: 100px; 
+            background-color: rgb(21, 74, 118);
+            transition: transform 0.6s;
+            margin: 10px 0;
+        }
+        
+        /* Estilos para la nueva calculadora */
+        .calc-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        body.oscuro .calc-container {
+            background-color: #333;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        body.oscuro .input-group label {
+            color: #f5f5f5;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #4b2121;
+            outline: none;
+        }
+        
+        .operation-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .operation-btn {
+            flex: 1;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .operation-btn:hover {
+            background-color: #e9ecef;
+        }
+        
+        .operation-btn.selected {
+            background-color: #4b2121;
+            color: white;
+            border-color: #4b2121;
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4b2121;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .calculate-btn:hover {
+            background-color: #3a1919;
+        }
+        
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        body.oscuro .result-container {
+            background-color: #2a2a2a;
+        }
+        
+        .result-expression {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        body.oscuro .result-expression {
+            color: #aaa;
+        }
+        
+        .result-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4b2121;
+        }
+        
+        body.oscuro .result-value {
+            color: #ff6b6b;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#datos-personales">Datos Personales</a></li>
+            <li><a href="#horarios">Horarios</a></li>
+            <li><a href="#formularios">Formularios</a></li>
+            <li><a href="#temas">Temas</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#datos-extras">Datos Extras</a></li>
+        </ul>
+    </nav>
+    
+    <section id="inicio" class="Inicios">
+        <h1>TECNOLOGIAS EMERGENTES 02/2025</h1>
+        <h1 id="reloj"></h1>
+    </section>
+    
+    <section id="datos-personales" class="personal-data">
+        <h2>Datos Personales</h2>    
+        <ul>
+            <li><h3>NOMBRE: <ins>Miguel Angel</ins></h3></li>
+            <li><h3>APELLIDOS: <del>Apaza Sanjinez</del></h3></li>
+            <li><h3>SEMESTRE: <del>4° Semestre</del></h3></li>
+            <li><h3>CORREO ELECTRONICO: <del>maiky60480960@gmail.com</del></h3></li>
+            <li><h3>SEXO: <del>Hombre</del></h3></li>
+            <li><h3>NACIONALIDAD: <del>BOLIVIA</del></h3></li>
+            <li><h3>CI: <del>12718097 Pt.</del></h3></li>
+            <li><h3>CUMPLEAÑOS: <del>14 DE AGOSTO</del></h3></li>
+            <li><h3>ESTADO CIVIL: <del>SOLTERO</del></h3></li>
+        </ul>
+    </section>
+    
+    <section id="horarios" class="horario">
+        <h2>Horarios</h2>
+        <table>
+            <tr>
+                <th>Horario</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+            </tr>
+            <tr>
+                <td>07:45-08:30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="SIS-415" rowspan="3">SIS-415</td>
+                <td class="libre" rowspan="15">LIBRE</td>
+                <td class="tiempox" rowspan="16" colspan="2">Paso tiempo con Victoria "Mi Hija"</td>
+            </tr>
+            <tr>
+                <td>08:30-09:15</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>09:15-10:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:00-10:45</td>
+                <td></td>
+                <td class="SIS-443" rowspan="3">SIS-443</td>
+                <td class="SIS-421" rowspan="3">SIS-421</td>
+                <td class="SIS-414" rowspan="2">SIS-414</td>
+            </tr>
+            <tr>
+                <td>10:45-11:30</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11:30-12:15</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:00-14:45</td>
+                <td></td>
+                <td></td>
+                <td class="SIS-416" rowspan="3">SIS-416</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:45-15:30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15:30-16:15</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16:15-17:00</td>
+                <td class="SIS-415" rowspan="3">SIS-415</td>
+                <td class="SIS-414" rowspan="3">SIS-414</td>
+                <td class="SIS-414" rowspan="3">SIS-414</td>
+                <td class="SIS-443" rowspan="3">SIS-443</td>
+            </tr>
+            <tr>
+                <td>17:00-17:45</td>
+            </tr>
+            <tr>
+                <td>17:45-18:30</td>
+            </tr>
+            <tr>
+                <td>18:30-19:15</td>
+                <td class="SIS-420" rowspan="3">SIS-420</td>
+                <td class="SIS-416" rowspan="3">SIS-416</td>
+                <td class="SIS-420" rowspan="3">SIS-420</td>
+                <td class="SIS-421" rowspan="3">SIS-421</td>
+            </tr>
+            <tr>
+                <td>19:15-20:00</td>
+            </tr>
+            <tr>
+                <td>20:00-20:45</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="formularios" class="formula">
+        <h2>Formularios</h2>
+        <form onsubmit="validar(event)">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label>Nombre: 
+                    <input type="text" id="nombre" name="nombre" placeholder="Miguel Angel" required>
+                </label>
+                <label>Apellidos: 
+                    <input type="text" name="apellido" placeholder="Apaza Sanjinez" required>
+                </label>
+                <label>Ciudad:
+                    <input list="ciudades" id="ciudad" name="ciudad" placeholder="Escribe o selecciona">
+                </label>
+                <datalist id="ciudades">
+                    <option value="La Paz"></option>
+                    <option value="Cochabamba"></option>
+                    <option value="Chuquisaca"></option>
+                    <option value="Santa Cruz"></option>
+                    <option value="Potosí"></option>
+                    <option value="Tarija"></option>
+                    <option value="Oruro"></option>
+                    <option value="Pando"></option>
+                    <option value="Beni"></option>
+                </datalist>
+                <label>Fecha:
+                    <input type="date" name="fecha">
+                </label>
+                <label>Hora:
+                    <input type="time" name="hora">
+                </label>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit">Enviar Formulario</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    
+    <section id="temas" class="tema">
+        <h2>Temas</h2>
+        
+        <div style="background: #e3f2fd; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #1976d2; margin-top: 0;">HTML</h3>
+            
+            <h4>¿Qué es HTML?</h4>
+            <p>Es el lenguaje para crear páginas web. Es como los bloques para construir.</p>
+            
+            <h4>Partes principales:</h4>
+            <div style="display: flex; gap: 10px; margin: 10px 0;">
+                <div style="flex: 1; background: white; padding: 10px; border-radius: 5px;">
+                    <strong>Etiquetas</strong>
+                    <div style="margin-top: 5px;">
+                        <code>&lt;h1&gt;</code><br>
+                        <code>&lt;p&gt;</code>
+                    </div>
+                </div>
+                <div style="flex: 1; background: white; padding: 10px; border-radius: 5px;">
+                    <strong>Atributos</strong>
+                    <div style="margin-top: 5px;">
+                        <code>class</code><br>
+                        <code>id</code>
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Para qué sirve:</h4>
+            <ul>
+                <li>Crear páginas web</li>
+                <li>Hacer formularios</li>
+                <li>Crear tablas</li>
+                <li>Organizar contenido</li>
+            </ul>
+        </div>
+
+        <div style="background: #fff3e0; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #f57c00; margin-top: 0;">CSS</h3>
+            
+            <h4>¿Qué es CSS?</h4>
+            <p>Es lo que hace que las páginas se vean bonitas. Le da estilo al HTML.</p>
+            
+            <h4>Cómo funciona:</h4>
+            <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                <code>h1 { color: blue; }</code>
+            </div>
+            
+            <h4>Cosas que puedo cambiar:</h4>
+            <div style="display: flex; gap: 8px; margin: 10px 0;">
+                <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                    <code>color</code>
+                </div>
+                <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                    <code>font-size</code>
+                </div>
+                <div style="flex: 1; background: white; padding: 8px; border-radius: 5px; text-align: center;">
+                    <code>margin</code>
+                </div>
+            </div>
+            
+            <h4>Para qué sirve:</h4>
+            <ul>
+                <li>Cambiar colores</li>
+                <li>Mover elementos</li>
+                <li>Hacer responsive</li>
+                <li>Agregar animaciones</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="javascript" class="javascript-section">
+        <h2>JavaScript</h2>
+        
+        <div class="demo-container">
+            <h3>Variables y Alertas</h3>
+            <button onclick="mostrarAlertas()">Mostrar Alertas</button>
+            <div class="code-block">
+                let nombre = "Miguel Angel";<br>
+                alert("Hola " + nombre + ", ¡bienvenido al curso de JavaScript!");
+            </div>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Funciones</h3>
+            <p>Función que calcula un precio con descuento:</p>
+            <div class="code-block">
+                function calcular(precio) {<br>
+                &nbsp;&nbsp;if (precio > 100) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return precio - 50;<br>
+                &nbsp;&nbsp;} else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return precio * 10;<br>
+                &nbsp;&nbsp;}<br>
+                }<br>
+                document.write("Precio final: " + calcular(99) + " números");
+            </div>
+            <button onclick="ejecutarFuncion()">Ejecutar Función</button>
+            <div id="resultado-funcion"></div>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Bucles</h3>
+            <h4>Bucle While</h4>
+            <button onclick="ejecutarWhile()">Ejecutar Bucle While</button>
+            <div id="resultado-while"></div>
+            
+            <h4>Bucle For</h4>
+            <button onclick="ejecutarFor()">Ejecutar Bucle For</button>
+            <div id="resultado-for"></div>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Manipulación del DOM</h3>
+            <h4 id="titulo">Texto original</h4>
+            <button onclick="cambiarTexto()">Cambiar Texto</button>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Modo Oscuro</h3>
+            <button onclick="cambiarModo()">Cambiar modo</button>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Animaciones</h3>
+            <div id="cuadro"></div>
+            <p>Pasa el cursor sobre el cuadro para ver la animación</p>
+        </div>
+        
+        <div class="demo-container">
+            <h3>Calculadora Básica</h3>
+            <div class="calc-container">
+                <div class="input-group">
+                    <label for="num1">Primer número</label>
+                    <input type="number" id="num1" placeholder="Ingresa el primer número">
+                    <div class="error-message" id="error-num1"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="num2">Segundo número</label>
+                    <input type="number" id="num2" placeholder="Ingresa el segundo número">
+                    <div class="error-message" id="error-num2"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Selecciona la operación</label>
+                    <div class="operation-selector">
+                        <button class="operation-btn" data-operation="+">+</button>
+                        <button class="operation-btn" data-operation="-">-</button>
+                        <button class="operation-btn" data-operation="*">×</button>
+                        <button class="operation-btn" data-operation="/">÷</button>
+                    </div>
+                    <input type="hidden" id="operation" value="">
+                    <div class="error-message" id="error-operation"></div>
+                </div>
+                
+                <button class="calculate-btn" id="calculate">Calcular</button>
+                
+                <div class="result-container">
+                    <div class="result-expression" id="expression">Ingresa valores y selecciona una operación</div>
+                    <div class="result-value" id="result">-</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="datos-extras" class="extra-dato">
+        <h2>Datos Extras</h2>
+        <p>"Se puede añadir cualquier información que se considere necesaria"</p>
+    </section>
+    
+    <footer>
+        Ingenieria de Sistema sede Tupiza <br>
+        TODOS LOS DERECHOS RESERVADOS @2025
+    </footer>
+
+    <script>
+        // Reloj en tiempo real
+        function actualizarReloj() {
+            const ahora = new Date();
+            document.getElementById("reloj").textContent = ahora.toLocaleTimeString();
+        }
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
+        
+        // Variables y alertas
+        function mostrarAlertas() {
+            let nombre = "Miguel Angel";
+            alert("Hola " + nombre + ", ¡bienvenido al curso de JavaScript!");
+            let nombre2 = "Apaza Sanjinez";
+            alert("Hola " + nombre2 + ", ¡bienvenido al curso de JavaScript!");
+        }
+        
+        // Función de cálculo
+        function calcular(precio) {
+            if (precio > 100) {
+                return precio - 50;
+            } else {
+                return precio * 10;
+            }
+        }
+        
+        function ejecutarFuncion() {
+            document.getElementById("resultado-funcion").innerHTML = 
+                "Precio final: " + calcular(99) + " números";
+        }
+        
+        // Bucles
+        function ejecutarWhile() {
+            let contador = 1;
+            let resultado = "";
+            while (contador <= 10) {
+                resultado += "conteo en orden " + contador + " <br> ";
+                contador++;
+            }
+            resultado += "conteo final " + contador;
+            document.getElementById("resultado-while").innerHTML = resultado;
+        }
+        
+        function ejecutarFor() {
+            let resultado = "<h4>Bucle for</h4>";
+            for (let i = 1; i <= 5; i++) {
+                resultado += "Contando: " + i + "<br>";
+            }
+            document.getElementById("resultado-for").innerHTML = resultado;
+        }
+        
+        // Manipulación del DOM
+        function cambiarTexto() {
+            const titulo = document.getElementById("titulo");
+            titulo.textContent = "¡Texto cambiado con JavaScript!";
+            titulo.style.color = "red";
+        }
+        
+        // Modo oscuro
+        function cambiarModo() {
+            document.body.classList.toggle("oscuro");
+        }
+        
+        // Validación de formulario
+        function validar(e) {
+            e.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            if (nombre.trim() === "") {
+                alert("Por favor, ingresa tu nombre.");
+            } else {
+                alert("Bienvenido, " + nombre + "!");
+            }
+        }
+        
+        // Animación del cuadro
+        const cuadro = document.getElementById("cuadro");
+        cuadro.addEventListener("mouseover", () => cuadro.style.transform = "scale(1.5)");
+        cuadro.addEventListener("mouseout", () => cuadro.style.transform = "scale(1)");
+        
+        // Calculadora básica
+        document.addEventListener('DOMContentLoaded', function() {
+            const num1Input = document.getElementById('num1');
+            const num2Input = document.getElementById('num2');
+            const operationInput = document.getElementById('operation');
+            const calculateBtn = document.getElementById('calculate');
+            const expressionDiv = document.getElementById('expression');
+            const resultDiv = document.getElementById('result');
+            const operationBtns = document.querySelectorAll('.operation-btn');
+            
+            // Variables para manejo de errores
+            const errorNum1 = document.getElementById('error-num1');
+            const errorNum2 = document.getElementById('error-num2');
+            const errorOperation = document.getElementById('error-operation');
+            
+            // Manejar selección de operaciones
+            operationBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover selección anterior
+                    operationBtns.forEach(b => b.classList.remove('selected'));
+                    
+                    // Añadir selección actual
+                    this.classList.add('selected');
+                    
+                    // Actualizar valor de la operación
+                    operationInput.value = this.getAttribute('data-operation');
+                    
+                    // Limpiar mensaje de error
+                    errorOperation.textContent = '';
+                });
+            });
+            
+            // Función para limpiar errores
+            function clearErrors() {
+                errorNum1.textContent = '';
+                errorNum2.textContent = '';
+                errorOperation.textContent = '';
+            }
+            
+            // Función para validar entrada
+            function validateInputs() {
+                let isValid = true;
+                clearErrors();
+                
+                // Validar primer número
+                if (num1Input.value === '') {
+                    errorNum1.textContent = 'Por favor, ingresa el primer número';
+                    isValid = false;
+                }
+                
+                // Validar segundo número
+                if (num2Input.value === '') {
+                    errorNum2.textContent = 'Por favor, ingresa el segundo número';
+                    isValid = false;
+                }
+                
+                // Validar operación seleccionada
+                if (operationInput.value === '') {
+                    errorOperation.textContent = 'Por favor, selecciona una operación';
+                    isValid = false;
+                }
+                
+                // Validar división por cero
+                if (operationInput.value === '/' && parseFloat(num2Input.value) === 0) {
+                    errorNum2.textContent = 'No se puede dividir por cero';
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            // Función para calcular resultado
+            function calculateResult() {
+                if (!validateInputs()) {
+                    resultDiv.textContent = '-';
+                    return;
+                }
+                
+                const num1 = parseFloat(num1Input.value);
+                const num2 = parseFloat(num2Input.value);
+                const operation = operationInput.value;
+                
+                let result;
+                let operationSymbol;
+                
+                switch(operation) {
+                    case '+':
+                        result = num1 + num2;
+                        operationSymbol = '+';
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        operationSymbol = '-';
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        operationSymbol = '×';
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        operationSymbol = '÷';
+                        break;
+                    default:
+                        result = 'Error';
+                        operationSymbol = '?';
+                }
+                
+                // Mostrar expresión y resultado
+                expressionDiv.textContent = `${num1} ${operationSymbol} ${num2} =`;
+                resultDiv.textContent = result;
+            }
+            
+            // Evento para el botón calcular
+            calculateBtn.addEventListener('click', calculateResult);
+            
+            // Permitir calcular con Enter
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    calculateResult();
+                }
+            });
+            
+            // Limpiar errores al escribir
+            num1Input.addEventListener('input', function() {
+                errorNum1.textContent = '';
+            });
+            
+            num2Input.addEventListener('input', function() {
+                errorNum2.textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>
